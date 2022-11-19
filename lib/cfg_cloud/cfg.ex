@@ -6,6 +6,7 @@ defmodule CfgCloud.CFG do
   schema "cfgs" do
     field :contents, :string
     field :title, :string
+    belongs_to :user, CfgCloud.User
 
     timestamps()
   end
