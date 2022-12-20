@@ -6,9 +6,10 @@ defmodule CfgCloudWeb.Router do
   end
 
   scope "/api", CfgCloudWeb do
-    pipe_through :api
+    pipe_through(:api)
 
     resources "/cfgs", CfgController, only: [:index, :create, :show, :update, :delete]
+    resources "/users", UserController, only: [:create, :show, :update, :delete]
   end
 
   # Enables LiveDashboard only for development

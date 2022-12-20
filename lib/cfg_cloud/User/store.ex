@@ -6,7 +6,7 @@ defmodule CfgCloud.User.Store do
   end
 
   def show(id) do
-    Repo.get(User, id)
+    Repo.get(User, id) |> Repo.preload(:cfgs)
   end
 
   def delete(%User{} = user) do
